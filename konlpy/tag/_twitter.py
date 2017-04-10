@@ -71,6 +71,9 @@ class Twitter():
 
         return [p for p in self.jki.phrases(phrase).toArray()]
 
+    def norms(self, phrase):
+        return self.jki.normalize(phrase)
+
     def __init__(self, jvmpath=None):
         if not jpype.isJVMStarted():
             jvm.init_jvm(jvmpath)
